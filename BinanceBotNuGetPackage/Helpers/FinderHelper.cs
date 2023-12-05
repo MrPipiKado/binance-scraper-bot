@@ -11,10 +11,7 @@ public static class FinderHelper
 {
     public static bool IsCryptoNameFound(string cryptoName, DataRow dataRow)
     {
-        var str = "";
-        str = dataRow.ItemArray[0]!.ToString();
-        var splited_str = str.Split("\n");
-        if (splited_str.Contains(cryptoName))
+        if (dataRow.ItemArray[0]!.ToString()!.Split("\n").Contains(cryptoName))
         {
             return true;
         }
@@ -24,14 +21,12 @@ public static class FinderHelper
 
     public static string? ReturnDate(string date)
     {
-        var date_of = date.Split("T").FirstOrDefault();
-        return date_of;
+        return date.Split("T").FirstOrDefault();
     }
     
     public static string? ReturnTime(string time)
     {
-        var time_of = time.Split("T").LastOrDefault();
-        return time_of;
+        return time.Split("T").LastOrDefault();
     }
 
     public static List<int> GetListOfCoordinates(
@@ -44,23 +39,25 @@ public static class FinderHelper
         List<int> cordinates = new List<int>();
         int periods = 0;
         var dateDifference = endDate - startDate;
-        
-        if(periodSelector == "15m"){
-            periods = dateDifference.Hours * 4;
+        switch (periodSelector)
+        {
+            case "15m":
+                periods = dateDifference.Hours * 4;
+                break;
+            case "1H":
+                periods = dateDifference.Hours;
+                break;
+            case "4H":
+                periods = dateDifference.Hours / 4;
+                break;
+            case "1D":
+                periods = dateDifference.Days;
+                break;
+            case "1W":
+                periods = dateDifference.Days / 7;
+                break;
         }
-        else if(periodSelector == "1H"){
-            periods = dateDifference.Hours;
-        }
-        else if(periodSelector == "4H"){
-            periods = dateDifference.Hours / 4;
-        }
-        else if(periodSelector == "1D"){
-            periods = dateDifference.Days;
-        }
-        else if(periodSelector == "1W"){
-            periods = dateDifference.Days / 7;
-        }
-        
+
         int step = width / periods;
         for (int i = 0; i < periods; i++)
         {
@@ -114,30 +111,31 @@ public static class FinderHelper
 
     public static TimeSpan GetTimeBuffer(string dateInterval)
     {
-        if(dateInterval == "15m"){  
-            return new TimeSpan(0, 0, 15, 0, 0);
+        switch (dateInterval)
+        {
+            case "15m":
+                return new TimeSpan(0, 0, 15, 0, 0);
+                break;
+            case "1H":
+                return new TimeSpan(0, 1, 0, 0, 0);
+                break;
+            case "4H":
+                return new TimeSpan(0, 4, 0, 0, 0);
+                break;
+            case "1D":
+                return new TimeSpan(1, 0, 0, 0, 0);
+                break;
+            case "1W":
+                return new TimeSpan(7, 0, 0, 0, 0);
+                break;
         }
-        else if(dateInterval == "1H"){     
-            return new TimeSpan(0, 1, 0, 0, 0);
-        }
-        else if(dateInterval == "4H"){     
-            return new TimeSpan(0, 4, 0, 0, 0);
-        }
-        else if(dateInterval == "1D"){    
-            return new TimeSpan(1, 0, 0, 0, 0);
-        }
-        else if(dateInterval == "1W"){    
-            return new TimeSpan(7, 0, 0, 0, 0);
-        }
-        
 
         return new TimeSpan();
     }
     public static string ReplaceSpacesAndBackslashes(string input)
     {
-        var res1 = input.Replace(" ", "*");
-        var res2 = res1.Replace("\\", "SLASH");
-        return res2;
+        string result = input.Replace(" ", "*").Replace("\\", "SLASH");
+        return result;
     }
     public static string RestoreOriginalString(string input)
     {
@@ -259,6 +257,13 @@ public static class FinderHelper
         optionsBuilder.UseSqlite(connectionStr);
         using (var dbContext = new BinanceBotDbContext(optionsBuilder.Options))
         {
+            // var duplicates1 = dbContext.Deals
+            //     .ToList()
+            //     .Except(dbContext.Deals.
+            //         GroupBy(x => new { x.StartDate, x.EndDate, x.Period })
+            //         .Select(x=>x.First())
+            //     );
+            
             var duplicates = dbContext.Deals
                 .ToList()
                 .GroupBy(x => new { x.StartDate, x.EndDate, x.Period })
