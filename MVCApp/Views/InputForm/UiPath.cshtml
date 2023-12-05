@@ -1,0 +1,135 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Html
+@using System.Reflection.Emit
+@model MVCApp.Models.ChartModel
+
+@{
+    ViewData["Title"] = "Visualize";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<h5 class="display-6">@Model.Deals.First().FirstCrypto.CryptoName</h5>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-container" style="width: 100%; height: 100%;">
+                <canvas id="chart1"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart-container" style="width: 100%; height: 100%;">
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-container" style="width: 100%; height: 100%;">
+                <canvas id="chart3"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart-container" style="width: 100%; height: 100%;">
+                <canvas id="chart4"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        var ctx1 = document.getElementById('chart1').getContext('2d');
+            var chart1 = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.EndDate))),
+                    datasets: [{
+                        label: 'Crypto sales volume',
+                        data: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.DealsVolume))),
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        var ctx2 = document.getElementById('chart2').getContext('2d');
+            var chart2 = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.EndDate))),
+                    datasets: [{
+                        label: 'Actual price',
+                        data: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.CurrentPrice))),
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            var ctx3 = document.getElementById('chart3').getContext('2d');
+                var chart3 = new Chart(ctx3, {
+                     type: 'line',
+                                data: {
+                                    labels: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.EndDate))),
+                                    datasets: [
+                                        {
+                                            label: 'Highest price',
+                                            data: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.HighestPrice))),
+                                            backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                                        },
+                                        {
+                                            label: 'Lowest price',
+                                            data: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.LowestPrice))),
+                                            backgroundColor: 'rgba(255, 99, 132, 0.5)'
+                                        }
+                                    ]
+                                },
+                                options: {
+                                    responsive: true,
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+               
+                var ctx4 = document.getElementById('chart4').getContext('2d');
+                var chart4 = new Chart(ctx4, {
+                    type: 'bar',
+                    data: {
+                        labels: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.EndDate))),
+                        datasets: [{
+                            label: 'Change percentage',
+                            data: @Html.Raw(Json.Serialize(Model.Deals.Select(x => x.ChangePercentage))),
+                            backgroundColor: 'rgba(75, 192, 192, 0.5)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+    </script>
+}

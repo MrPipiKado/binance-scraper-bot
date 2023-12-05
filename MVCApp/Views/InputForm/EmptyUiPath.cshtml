@@ -1,0 +1,159 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Html
+@using System.Reflection.Emit
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Visualize";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+<h2 class="text-danger">@Model.ErrorMessage</h2>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-container" style="width: 100%; height: 100%;">
+                <canvas id="chart1"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart-container" style="width: 100%; height: 100%;">
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart-container" style="width: 100%; height: 100%;">
+                <canvas id="chart3"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart-container" style="width: 100%; height: 100%;">
+                <canvas id="chart4"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        var chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        };
+        var ctx1 = document.getElementById('chart1').getContext('2d');
+            chart1 = new Chart(ctx1, {
+                    type: 'bar',
+                    data: {
+                        labels: [],
+                        datasets: [{
+                            label: 'No Data',
+                            data: [],
+                            backgroundColor: 'rgba(0, 0, 0, 0)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: false
+                            }
+                        },
+                        plugins: {
+                            tooltip: {
+                                enabled: false
+                            }
+                        }
+                    }
+                });
+        var ctx2 = document.getElementById('chart2').getContext('2d');
+            chart2 = new Chart(ctx2, {
+                                        type: 'line',
+                                        data: {
+                                            labels: [],
+                                            datasets: [{
+                                                label: 'No Data',
+                                                data: [],
+                                                backgroundColor: 'rgba(0, 0, 0, 0)'
+                                            }]
+                                        },
+                                        options: {
+                                            responsive: true,
+                                            scales: {
+                                                y: {
+                                                    beginAtZero: false
+                                                }
+                                            },
+                                            plugins: {
+                                                tooltip: {
+                                                    enabled: false
+                                                }
+                                            }
+                                        }
+                                    });
+        var ctx3 = document.getElementById('chart3').getContext('2d');
+            chart3 = new Chart(ctx3, {
+                                                type: 'line',
+                                                data: {
+                                                    labels: [],
+                                                    datasets: [{
+                                                        label: 'No Data',
+                                                        data: [],
+                                                        backgroundColor: 'rgba(0, 0, 0, 0)'
+                                                    }]
+                                                },
+                                                options: {
+                                                    responsive: true,
+                                                    scales: {
+                                                        y: {
+                                                            beginAtZero: false
+                                                        }
+                                                    },
+                                                    plugins: {
+                                                        tooltip: {
+                                                            enabled: false
+                                                        }
+                                                    }
+                                                }
+                                            });
+        var ctx4 = document.getElementById('chart4').getContext('2d');
+            chart4 = new Chart(ctx4, {
+                                                type: 'line',
+                                                data: {
+                                                    labels: [],
+                                                    datasets: [{
+                                                        label: 'No Data',
+                                                        data: [],
+                                                        backgroundColor: 'rgba(0, 0, 0, 0)'
+                                                    }]
+                                                },
+                                                options: {
+                                                    responsive: true,
+                                                    scales: {
+                                                        y: {
+                                                            beginAtZero: false
+                                                        }
+                                                    },
+                                                    plugins: {
+                                                        tooltip: {
+                                                            enabled: false
+                                                        }
+                                                    }
+                                                }
+                                            });                        
+    </script>
+}

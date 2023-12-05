@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>BinanceBotNuGetPackage</id>
+    <version>1.0.28</version>
+    <authors>BinanceBotNuGetPackage</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0">
+        <dependency id="Chart.js" version="3.7.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Data.Sqlite" version="7.0.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Data.Sqlite.Core" version="7.0.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore" version="7.0.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Sqlite" version="7.0.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="7.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\bin\Debug\net6.0-windows\BinanceBotNuGetPackage.runtimeconfig.json" target="lib\net6.0-windows7.0\BinanceBotNuGetPackage.runtimeconfig.json" />
+    <file src="C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\bin\Debug\net6.0-windows\BinanceBotNuGetPackage.dll" target="lib\net6.0-windows7.0\BinanceBotNuGetPackage.dll" />
+  </files>
+</package>

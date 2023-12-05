@@ -1,0 +1,15 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CViktor_005FRomashko_005CDesktop_005Cdiplomaproj_005CBinanceBotWebApplication_005CBinanceBotNuGetPackage_005Cbin_005CDebug_005Cnet6_002E0_002Dwindows_005CBinanceBotNuGetPackage_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CViktor_005FRomashko_005CDesktop_005Cdiplomaproj_005CBinanceBotWebApplication_005CBinanceBotNuGetPackage_005Ce_005Fsqlite3_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CViktor_005FRomashko_005CDesktop_005Cdiplomaproj_005CBinanceBotWebApplication_005CMVCApp_005CBinanceBotNuGetPackage_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CViktor_005FRomashko_005CDesktop_005Cdiplomaproj_005CBinanceBotWebApplication_005CMVCApp_005Cbin_005CDebug_005Cnet6_002E0_005CSQLitePCLRaw_002Eprovider_002Ee_005Fsqlite3_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CViktor_005FRomashko_005CDesktop_005Cdiplomaproj_005CBinanceBotWebApplication_005CMVCApp_005CMicrosoft_002EExtensions_002EDependencyInjection_002EAbstractions_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CViktor_005FRomashko_005CDesktop_005Cdiplomaproj_005CBinanceBotWebApplication_005CMVCApp_005CMicrosoft_002EExtensions_002EDependencyInjection_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CViktor_005FRomashko_005C_002Enuget_005Cpackages_005Cuipath_005C22_002E10_002E49_002E23_005Cbuild_005CUiPath_005CUiPath_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Users\Viktor_Romashko\.nuget\packages\uipath\22.10.49.23\build\UiPath\UiPath.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2b60d198_002D2ce5_002D449d_002D83e0_002De542c4a3e3f2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from UnitTest1.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;ProjectFile&gt;FDC27528-4627-41D6-9B8D-0D2D91A2F9DC/f:UnitTest1.cs&lt;/ProjectFile&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>

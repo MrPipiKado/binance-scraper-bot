@@ -1,0 +1,12 @@
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\bin\Release\net6.0-windows\BinanceBotNuGetPackage.deps.json
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\bin\Release\net6.0-windows\BinanceBotNuGetPackage.runtimeconfig.json
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\bin\Release\net6.0-windows\BinanceBotNuGetPackage.dll
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\BinanceBotNuGetPackage.csproj.AssemblyReference.cache
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\BinanceBotNuGetPackage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\BinanceBotNuGetPackage.AssemblyInfoInputs.cache
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\BinanceBotNuGetPackage.AssemblyInfo.cs
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\BinanceBotNuGetPackage.csproj.CoreCompileInputs.cache
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\BinanceBotNuGetPackage.dll
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\refint\BinanceBotNuGetPackage.dll
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\BinanceBotNuGetPackage.genruntimeconfig.cache
+C:\Users\Viktor_Romashko\Desktop\diplomaproj\BinanceBotWebApplication\BinanceBotNuGetPackage\obj\Release\net6.0-windows\ref\BinanceBotNuGetPackage.dll

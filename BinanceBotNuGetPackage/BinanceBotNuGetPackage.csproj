@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeSymbols>False</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <Version>1.0.29</Version>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DebugType>full</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DebugSymbols>true</DebugSymbols>
+      <DebugType>full</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <DebugType>embedded</DebugType>
+      <Optimize>False</Optimize>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <DebugType>embedded</DebugType>
+      <Optimize>False</Optimize>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Chart.js" Version="3.7.1" />
+      <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.5" />
+      <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.5" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Repositories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Repositories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Repositories\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="SQLitePCLRaw.provider.e_sqlite3">
+        <HintPath>..\MVCApp\bin\Debug\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+<!--    <Target Name="PostBuild" AfterTargets="PostBuildEvent">-->
+<!--      <Exec Command="nuget.exe pack $(ProjectDir)$(ProjectName).nuspec -OutputDirectory $(ProjectDir)..\..\..\..\NugetPkg&#xA;nuget.exe pack $(ProjectDir)$(ProjectName).nuspec -OutputDirectory $(ProjectDir)..\..\..\NugetPkg" />-->
+<!--    </Target>-->
+    <Target Name="AfterBuild" Condition="'$(Configuration)'=='Debug'">
+        <Exec Command="nuget.exe pack $(ProjectDir)$(ProjectName).nuspec -Properties Configuration=$(Configuration) -OutputDirectory -OutputDirectory $(ProjectDir) -symbols -IncludeReferencedProjects" />
+    </Target>
+
+</Project>

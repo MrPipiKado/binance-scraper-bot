@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Html
+@using System.Reflection.Emit
+@model MVCApp.Models.UiPathParams
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">BinanceBot</h1>
+
+    @using (Html.BeginForm("PrepareUiPathExecution", "InputForm", FormMethod.Post))
+{
+    <br>
+    <div class="form-group text-center">
+        <hr class="my-1 small" style="width: 30%;margin: 0 auto;">
+        <h5 class="display-6">Enter crypto currency name:</h5>
+        <br>
+        <div>
+            @Html.TextBoxFor(
+                m => m.Name,
+                "",
+                new
+                {
+                    @class = "form-control text-center",
+                    placeholder = "Enter crypto name",
+                    style = "width: 60%; margin: 0 auto;"
+                })
+        </div>
+        <hr class="my-2" style="width: 70%;margin: 0 auto;">
+        <h5 class="display-6">Choose data intervals:</h5>
+        <br>
+        <div>
+            <div class="form-check form-check-inline">
+                @Html.Label("15m", new string("15m"), new { @class = "form-check-label" })
+                @Html.RadioButtonFor(m => m.PeriodSelector, "15m", new { @class = "form-check-input" })
+            </div>
+            <div class="form-check form-check-inline">
+                @Html.Label("1H", new string("1H"), new { @class = "form-check-label" })
+                @Html.RadioButtonFor(m => m.PeriodSelector, "1H", new { @class = "form-check-input" })
+            </div>
+            <div class="form-check form-check-inline">
+                @Html.Label("4H", new string("4H"), new { @class = "form-check-label" })
+                @Html.RadioButtonFor(m => m.PeriodSelector, "4H", new { @class = "form-check-input" })
+            </div>
+            <div class="form-check form-check-inline">
+                @Html.Label("1D", new string("1D"), new { @class = "form-check-label" })
+                @Html.RadioButtonFor(m => m.PeriodSelector, "1D", new { @class = "form-check-input" })
+            </div>
+            <div class="form-check form-check-inline">
+                @Html.Label("1W", new string("1W"), new { @class = "form-check-label" })
+                @Html.RadioButtonFor(m => m.PeriodSelector, "1W", new { @class = "form-check-input" })
+            </div>
+        </div>
+        <hr class="my-2" style="width: 40%;margin: 0 auto;">
+        <h5 class="display-6">Enter start date:</h5>
+        <br>
+        <div>
+            @Html.TextBoxFor(m => m.StartDate, "", new { @class = "form-control text-center", style = "width: 40%; margin: 0 auto;", type = "datetime-local" })
+        </div>
+        <hr class="my-2" style="width: 50%;margin: 0 auto;">
+        <h5 class="display-6">Enter end date:</h5>
+        <br>
+        <div>
+            @Html.TextBoxFor(m => m.EndDate, "", new { @class = "form-control text-center", style = "width: 40%; margin: 0 auto;", type = "datetime-local" })
+        </div>
+        <hr class="my-2" style="width: 50%;margin: 0 auto;">
+        @Html.Label("From DataBase", new string("From DataBase"), new { @class = "form-check-label" })
+        @Html.CheckBoxFor(m=>m.FromDb,new{ @class = "form-check-input",})
+        <br>
+        <br>
+        <input type="submit" value="Send results" class="btn btn-secondary" style="width: 55%; height: 15%; margin: 0 auto;">
+    </div>
+}
+</div>
